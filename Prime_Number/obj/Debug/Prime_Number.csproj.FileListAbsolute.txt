@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Prime_Number\Prime_Number\bin\Debug\Prime_Number.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Prime_Number\Prime_Number\obj\Debug\Prime_Number.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Prime_Number\Prime_Number\bin\Debug\Prime_Number.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Prime_Number\Prime_Number\bin\Debug\Prime_Number.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Prime_Number\Prime_Number\obj\Debug\Prime_Number.exe
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\Prime_Number\Prime_Number\obj\Debug\Prime_Number.pdb
