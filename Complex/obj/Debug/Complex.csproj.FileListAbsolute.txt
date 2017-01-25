@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\bin\Debug\Complex.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\bin\Debug\Complex.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\bin\Debug\Complex.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\obj\Debug\Complex.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\obj\Debug\Complex.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Complex\Complex\obj\Debug\Complex.pdb
