@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\bin\Debug\Work with file.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\obj\Debug\Work with file.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\bin\Debug\Work with file.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\bin\Debug\Work with file.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\obj\Debug\Work with file.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Work with file\Work with file\obj\Debug\Work with file.pdb
