@@ -48,7 +48,7 @@ namespace Directories_filies
                     //to get fullName (or path)
                     Console.WriteLine(dInfo.FullName);
                     //use function to open directories in the directories
-                    //level + 1 
+                    //level + 1 to open folder in this folder
                     recur(dInfo.FullName, level + 1);
                 }
             }
