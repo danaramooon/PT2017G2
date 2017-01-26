@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\bin\Debug\Directories_filies.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\obj\Debug\Directories_filies.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\bin\Debug\Directories_filies.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\bin\Debug\Directories_filies.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\obj\Debug\Directories_filies.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Directories_filies\Directories_filies\obj\Debug\Directories_filies.pdb
