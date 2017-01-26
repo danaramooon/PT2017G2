@@ -38,25 +38,103 @@ namespace Complex
                 Complex c = new Complex(x.x * y.y + y.x * x.y, x.y * y.y);
                 return c;
             }
+            //provide overload a binary operator -
+            public static Complex operator -(Complex x, Complex y)
+            {
+                //changed the purpose of  -  by adding new class 
+                Complex c = new Complex(x.x * y.y - y.x * x.y, x.y * y.y);
+                return c;
+            }
+            //provide overload a binary operator /
+            public static Complex operator /(Complex x, Complex y)
+            {
+                //changed the purpose of  /  by adding new class 
+                Complex c = new Complex(x.x * y.y, x.y * y.x);
+                return c;
+            }
+            //provide overload a binary operator *
+            public static Complex operator *(Complex x, Complex y)
+              {
+                  //changed the purpose of  *  by adding new class 
+                  Complex c = new Complex(x.x * y.x, x.y * y.y);
+                
+                  return c;
+              }
             static void Main(string[] args)
             {
                 string s = Console.ReadLine();
                 string[] arr = s.Split();
-                Complex sum = new Complex(0, 1);
+                Complex sum = new Complex(0, 0);
                 foreach (string ss in arr)
                 {
                     string[] t = ss.Split('/');
                     Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
-                    sum = sum + p;
+                    if (sum.x == 0 & sum.y == 0)
+                    {
+                        sum = p;
+                    }
+                    else
+                    {
+                        sum = sum + p;
+                    }
                 }
-                //new variables to save the attributes
-                int z = sum.x;
-                int l = sum.y;
-                //devide to gcd(z,l) to get an abbreviated complex number
-                Console.WriteLine(z / gcd(z, l) + "/" + l / gcd(z, l));
+
+                Complex sub = new Complex(0, 0);
+                foreach (string ss in arr)
+                {
+                    string[] t = ss.Split('/');
+                    Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                    if (sub.x == 0 & sub.y == 0)
+                    {
+                        sub = p;
+                    }
+                    else
+                    {
+                        sub = sub - p;
+                    }
+                }
+                Complex mul = new Complex(0, 0);
+                foreach (string ss in arr)
+                {
+                    string[] t = ss.Split('/');
+                    Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                    if (mul.x == 0 & mul.y == 0)
+                    {
+                        mul = p;
+                    }
+                    else
+                    {
+                        mul = mul * p;
+                    }
+                }
+
+                Complex div = new Complex(0, 0);
+                    foreach (string ss in arr)
+                    {
+                        string[] t = ss.Split('/');
+                        Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                        if (div.x == 0 & div.y == 0)
+                        {
+                            div = p;
+                        }
+                        else
+                        {
+                            div = div / p;
+                        }
+
+                    }
+                    //devide to gcd() to get an abbreviated complex number
+ 
+                Console.WriteLine(sum.x / gcd(sum.x,sum.y) + "/" + sum.y / gcd(sum.x, sum.y));
+                Console.WriteLine(sub.x / gcd(sub.x, sub.y) + "/" + sub.y / gcd(sub.x, sub.y));
+                Console.WriteLine(mul.x / gcd(mul.x, mul.y) + "/" + mul.y / gcd(mul.x, mul.y));
+                Console.WriteLine(div.x / gcd(div.x, div.y) + "/" + div.y / gcd(div.x, div.y));
+
                 Console.ReadKey();
 
+                
             }
         }
     }
 }
+
