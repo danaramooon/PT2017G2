@@ -19,11 +19,6 @@ namespace Complex
                 this.x = x;
                 this.y = y;
             }
-            //rewrite function ToString()
-            public override string ToString()
-            {
-                return x + "/" + y;
-            }
             //function to find gcd of two complex numbers
             static int gcd(int x, int y)
             {
@@ -54,87 +49,88 @@ namespace Complex
             }
             //provide overload a binary operator *
             public static Complex operator *(Complex x, Complex y)
-              {
-                  //changed the purpose of  *  by adding new class 
-                  Complex c = new Complex(x.x * y.x, x.y * y.y);
-                
-                  return c;
-              }
-            static void Main(string[] args)
             {
-                string s = Console.ReadLine();
-                string[] arr = s.Split();
-                Complex sum = new Complex(0, 0);
-                foreach (string ss in arr)
-                {
-                    string[] t = ss.Split('/');
-                    Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
-                    if (sum.x == 0 & sum.y == 0)
-                    {
-                        sum = p;
-                    }
-                    else
-                    {
-                        sum = sum + p;
-                    }
-                }
-
-                Complex sub = new Complex(0, 0);
-                foreach (string ss in arr)
-                {
-                    string[] t = ss.Split('/');
-                    Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
-                    if (sub.x == 0 & sub.y == 0)
-                    {
-                        sub = p;
-                    }
-                    else
-                    {
-                        sub = sub - p;
-                    }
-                }
-                Complex mul = new Complex(0, 0);
-                foreach (string ss in arr)
-                {
-                    string[] t = ss.Split('/');
-                    Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
-                    if (mul.x == 0 & mul.y == 0)
-                    {
-                        mul = p;
-                    }
-                    else
-                    {
-                        mul = mul * p;
-                    }
-                }
-
-                Complex div = new Complex(0, 0);
-                    foreach (string ss in arr)
-                    {
-                        string[] t = ss.Split('/');
-                        Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
-                        if (div.x == 0 & div.y == 0)
-                        {
-                            div = p;
-                        }
-                        else
-                        {
-                            div = div / p;
-                        }
-
-                    }
-                    //devide to gcd() to get an abbreviated complex number
- 
-                Console.WriteLine(sum.x / gcd(sum.x,sum.y) + "/" + sum.y / gcd(sum.x, sum.y));
-                Console.WriteLine(sub.x / gcd(sub.x, sub.y) + "/" + sub.y / gcd(sub.x, sub.y));
-                Console.WriteLine(mul.x / gcd(mul.x, mul.y) + "/" + mul.y / gcd(mul.x, mul.y));
-                Console.WriteLine(div.x / gcd(div.x, div.y) + "/" + div.y / gcd(div.x, div.y));
-
-                Console.ReadKey();
-
-                
+                //changed the purpose of  *  by adding new class 
+                Complex c = new Complex(x.x * y.x, x.y * y.y);
+                return c;
             }
+            //rewrite function ToString() to divide to gcd()
+            public override string ToString()
+            {
+                return this.x / gcd(this.x, this.y) + "/" + this.y / gcd(this.x, this.y);
+            }
+        }
+        static void Main(string[] args)
+        {
+            string s = Console.ReadLine(); // insert values  
+            string[] arr = s.Split(); //divide them by the space
+            Complex sum = new Complex(0, 0); //creat a new complex with zero atributes 
+            foreach (string ss in arr) //rewrite values from array to string 
+            {
+                string[] t = ss.Split('/'); //divide them by /
+                Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                if (sum.x == 0 & sum.y == 0)
+                {
+                    sum = p;
+                }
+                else
+                {
+                    sum = sum + p;
+                }
+            }
+            Complex sub = new Complex(0, 0);
+            foreach (string ss in arr)
+            {
+                string[] t = ss.Split('/');
+                Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                if (sub.x == 0 & sub.y == 0)
+                {
+                    sub = p;
+                }
+                else
+                {
+                    sub = sub - p;
+                }
+            }
+            Complex mul = new Complex(0, 0);
+            foreach (string ss in arr)
+            {
+                string[] t = ss.Split('/');
+                Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                if (mul.x == 0 & mul.y == 0)
+                {
+                    mul = p;
+                }
+                else
+                {
+                    mul = mul * p;
+                }
+            }
+
+            Complex div = new Complex(0, 0);
+            foreach (string ss in arr)
+            {
+                string[] t = ss.Split('/');
+                Complex p = new Complex(int.Parse(t[0]), int.Parse(t[1]));
+                if (div.x == 0 & div.y == 0)
+                {
+                    div = p;
+                }
+                else
+                {
+                    div = div / p;
+                }
+            }
+            //show results 
+            //we rewrited ToString, so we can just write names of operations(complex)
+            Console.WriteLine(sum);
+            Console.WriteLine(sub);
+            Console.WriteLine(mul);
+            Console.WriteLine(div);
+
+            Console.ReadKey();
         }
     }
 }
+
 
