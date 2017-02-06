@@ -1,0 +1,5 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Min_Prime\Min_Prime\bin\Debug\Min_Prime.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Min_Prime\Min_Prime\bin\Debug\Min_Prime.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Min_Prime\Min_Prime\bin\Debug\Min_Prime.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\Min_Prime\Min_Prime\obj\Debug\Min_Prime.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Min_Prime\Min_Prime\obj\Debug\Min_Prime.pdb
