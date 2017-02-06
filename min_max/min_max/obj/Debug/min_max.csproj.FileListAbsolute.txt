@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\bin\Debug\min_max.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\bin\Debug\min_max.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\bin\Debug\min_max.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\obj\Debug\min_max.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\obj\Debug\min_max.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\min_max\min_max\obj\Debug\min_max.pdb
