@@ -1,0 +1,6 @@
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\bin\Debug\Far.exe.config
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\obj\Debug\Far.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\bin\Debug\Far.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\bin\Debug\Far.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\obj\Debug\Far.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\Far\Far\obj\Debug\Far.pdb
