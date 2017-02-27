@@ -1,0 +1,6 @@
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\bin\Debug\zmaika.exe.config
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\obj\Debug\zmaika.csprojResolveAssemblyReference.cache
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\bin\Debug\zmaika.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\bin\Debug\zmaika.pdb
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\obj\Debug\zmaika.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\zmaika\zmaika\obj\Debug\zmaika.pdb
