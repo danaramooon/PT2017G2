@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Snake xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <sign>111</sign>
+  <color>Yellow</color>
+  <body>
+    <Point>
+      <x>46</x>
+      <y>10</y>
+    </Point>
+    <Point>
+      <x>46</x>
+      <y>9</y>
+    </Point>
+    <Point>
+      <x>45</x>
+      <y>9</y>
+    </Point>
+  </body>
+  <cnt>1</cnt>
+</Snake>

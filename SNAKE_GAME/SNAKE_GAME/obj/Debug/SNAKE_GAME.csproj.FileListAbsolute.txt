@@ -1,0 +1,6 @@
+c:\users\данара\documents\visual studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\SNAKE_GAME.exe.config
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\SNAKE_GAME.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\SNAKE_GAME.pdb
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\obj\Debug\SNAKE_GAME.csprojResolveAssemblyReference.cache
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\obj\Debug\SNAKE_GAME.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\obj\Debug\SNAKE_GAME.pdb
