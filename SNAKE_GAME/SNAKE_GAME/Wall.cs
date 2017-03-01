@@ -46,9 +46,12 @@ namespace SNAKE_GAME
         {
             try
             {
+                string D = @"C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\wall.xml";
+                File.Delete(D);
+
                 FileStream fs = new FileStream("wall.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 XmlSerializer xs = new XmlSerializer(typeof(Wall));
-                xs.Serialize(fs, this);
+                xs.Serialize(fs, Program.wall);
                 fs.Close();
             }
             catch(Exception e) { }

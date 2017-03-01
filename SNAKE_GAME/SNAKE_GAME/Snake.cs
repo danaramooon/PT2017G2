@@ -14,18 +14,16 @@ namespace SNAKE_GAME
         public ConsoleColor color;
         public List<Point> body;
         public int cnt = 1;
+        public static int u = 1;
+        public static int r = 0;
         public Snake()
-        {
-            DrawSnake();
-        }
-
-        public void DrawSnake()
         {
             color = ConsoleColor.Yellow;
             body = new List<Point>();
-            body.Add(new Point(10, 10));
-        }      
-  
+            body.Add(new Point (10, 10));
+
+        }
+        
         public void Move(int dx, int dy)
         {
             for (int i = body.Count() - 1; i >= 0; i--)
@@ -73,9 +71,12 @@ namespace SNAKE_GAME
         {
             try
             {
+                string D = @"C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\snake.xml";
+                File.Delete(D);
+
                 FileStream fs = new FileStream("snake.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 XmlSerializer xs = new XmlSerializer(typeof(Snake));
-                xs.Serialize(fs, this);
+                xs.Serialize(fs, Program.snake);
                 fs.Close();
             }
             catch (Exception e)

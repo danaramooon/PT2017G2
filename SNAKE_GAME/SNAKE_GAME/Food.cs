@@ -29,9 +29,11 @@ namespace SNAKE_GAME
         {
             try
             {
+                string D = @"C:\Users\Данара\Documents\Visual Studio 2015\Projects\SNAKE_GAME\SNAKE_GAME\bin\Debug\food.xml";
+                File.Delete(D);
                 FileStream fs = new FileStream("food.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 XmlSerializer xs = new XmlSerializer(typeof(Food));
-                xs.Serialize(fs, this);
+                xs.Serialize(fs, Program.food);
                 fs.Close();
             }
             catch(Exception e)
@@ -45,7 +47,7 @@ namespace SNAKE_GAME
             {
                 FileStream fs = new FileStream("food.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 XmlSerializer xs = new XmlSerializer(typeof(Food));
-                Program.food= (Food)xs.Deserialize(fs);
+                Program.food = (Food)xs.Deserialize(fs);
                 fs.Close();
             }
             catch(Exception e) {

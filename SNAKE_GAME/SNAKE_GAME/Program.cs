@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.Xml.Serialization;
+using System.IO;
 namespace SNAKE_GAME
 {
     class Program
@@ -14,9 +15,8 @@ namespace SNAKE_GAME
         public static Food food = new Food();
         public static Wall wall;
         public static int d = 0;
-        public static int u = 0;
+        public static int u = 1;
         public static int r = 0;
-        public static int q = 0;
         public static int i = 0;
         public static int l = 300;
         static void Save()
@@ -56,12 +56,39 @@ namespace SNAKE_GAME
                 {
                     snake.Move(0, -1);
                 }
+                if (d == 6)
+                {
+                    FileStream fs = new FileStream("score.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xs = new XmlSerializer(typeof(int));
+                    xs.Serialize(fs, r);
+                    fs.Close();
+                    FileStream fz = new FileStream("level.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xz = new XmlSerializer(typeof(int));
+                    xz.Serialize(fz, u);
+                    fz.Close();
+                    Save();
+                }
+                if(d == 7)
+                {
+                    FileStream fs = new FileStream("score.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xs = new XmlSerializer(typeof(int));
+                    r = (int)xs.Deserialize(fs);
+                    fs.Close();
+                    FileStream fz = new FileStream("level.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xz = new XmlSerializer(typeof(int));
+                    u = (int)xz.Deserialize(fz);
+                    fz.Close();
+                    Resume();
+                    Console.Clear();
+                    snake.body.Remove(snake.body[0]);
+                }
                 if (GameOver = snake.CollistionWithWall(wall) || snake.CollisionWithSnake(snake))
                 {
                     Console.Clear();
                     Console.SetCursorPosition(30, 10);
                     Console.WriteLine("GAMEOVER");
                     Console.ReadKey();
+                    return;
                 }
                 if (snake.CanEat(food))
                 {
@@ -95,7 +122,7 @@ namespace SNAKE_GAME
                         Console.SetCursorPosition(snake.body[i].x, snake.body[i].y);
                         Console.Write(' ');
                     }
-                    snake.DrawSnake();
+                    snake = new Snake();
                     i++;
                     d = 0;
 
@@ -105,21 +132,18 @@ namespace SNAKE_GAME
                         Console.SetCursorPosition(30, 10);
                         Console.WriteLine("Winner!");
                         Console.ReadKey();
-                        break;
+                        return;
 
                     }
                     wall = new Wall(i);
                     u++;
-                    q = u + 1;
-                    l = l - 100;
-
                 }
 
                 Console.SetCursorPosition(10, 18);
-                Console.WriteLine("Current Level:" + q);
+                Console.WriteLine("Current Level:" + u);
                 Console.SetCursorPosition(10, 20);
                 Console.WriteLine("Score:" + r);
-                Thread.Sleep(l);
+                Thread.Sleep(500 - u * 100);
             }
         }
         
@@ -145,35 +169,41 @@ namespace SNAKE_GAME
 
             wall = new Wall(i);
             ConsoleKeyInfo btn = Console.ReadKey();
-            if (btn.Key == ConsoleKey.UpArrow)
+
+            if (btn.Key == ConsoleKey.UpArrow )
             {
+                 if(d != 2 | snake.body.Count <= 1)
                 d = 4;
                 //snake.Move(0, -1);
             }
             else if (btn.Key == ConsoleKey.DownArrow)
             {
+                    if(d != 4 | snake.body.Count <= 1)
                 d = 2;
                 //snake.Move(0, 1);
             }
             else if (btn.Key == ConsoleKey.LeftArrow)
             {
+                    if(d != 1 | snake.body.Count <= 1)
                 d = 3;
                 //snake.Move(-1, 0);
             }
             else if (btn.Key == ConsoleKey.RightArrow)
             {
+                    if(d != 3 | snake.body.Count <= 1)
                 d = 1;
                 //snake.Move(1, 0);
             }
 
             if (btn.Key == ConsoleKey.F2)
             {
-                Save();
+                    d = 6;
+               // Save();
             }
             if (btn.Key == ConsoleKey.F3)
             {
-                
-                Resume();
+                    d = 7;   
+                //Resume();
             }
                 }
 
