@@ -147,10 +147,16 @@ namespace SNAKE_GAME
 
                     if (snake.body.Count == 4)
                     {
+                        for (int i = snake.body.Count() - 1; i >= 0; i--)
+                        {
+                          Console.SetCursorPosition(snake.body[i].x, snake.body[i].y);
+                          Console.Write(' ');
+                       }
                         snake.DrawSnake();
                         i++;
                         d = 0;
-                        if (i == 3)
+                   
+                    if (i == 3)
                         {
                             Console.Clear();
                             Console.SetCursorPosition(30, 10);
