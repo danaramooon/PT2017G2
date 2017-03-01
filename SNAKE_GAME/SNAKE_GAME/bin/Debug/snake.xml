@@ -4,16 +4,16 @@
   <color>Yellow</color>
   <body>
     <Point>
-      <x>46</x>
-      <y>10</y>
+      <x>21</x>
+      <y>3</y>
     </Point>
     <Point>
-      <x>46</x>
-      <y>9</y>
+      <x>20</x>
+      <y>3</y>
     </Point>
-    <Point>
-      <x>45</x>
-      <y>9</y>
+  </body>
+  <cnt>1</cnt>
+</Snake>  <y>9</y>
     </Point>
   </body>
   <cnt>1</cnt>
