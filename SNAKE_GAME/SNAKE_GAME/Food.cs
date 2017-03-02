@@ -21,8 +21,8 @@ namespace SNAKE_GAME
         }
         public void SetRandomPosition()
         {
-            x = new Random().Next(5, 49);
-            y = new Random().Next(5, 13);
+            x = new Random().Next(1, 60);
+            y = new Random().Next(1, 20);
             location = new Point(x, y);
         }
         public void Save()

@@ -40,15 +40,15 @@ namespace SNAKE_GAME
             body[0].x += dx;
             body[0].y += dy;
 
-            if (body[0].x > Console.WindowWidth)
+            if (body[0].x > Console.WindowWidth - 10)
                 body[0].x = 1;
             if (body[0].x < 1)
-                body[0].x = Console.WindowWidth;
+                body[0].x = Console.WindowWidth - 10;
 
-            if (body[0].y > Console.WindowHeight)
+            if (body[0].y > Console.WindowHeight - 7)
                 body[0].y = 1;
             if (body[0].y < 1)
-                body[0].y = Console.WindowHeight;
+                body[0].y = Console.WindowHeight - 7;
         }
 
         public void Draw()

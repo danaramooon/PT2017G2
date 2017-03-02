@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
+using System.Timers;
 namespace SNAKE_GAME
 {
     class Program
@@ -66,6 +67,10 @@ namespace SNAKE_GAME
                     XmlSerializer xz = new XmlSerializer(typeof(int));
                     xz.Serialize(fz, u);
                     fz.Close();
+                    FileStream fy = new FileStream("lvl.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xy = new XmlSerializer(typeof(int));
+                    xy.Serialize(fy, i);
+                    fy.Close();
                     Save();
                 }
                 if(d == 7)
@@ -78,6 +83,10 @@ namespace SNAKE_GAME
                     XmlSerializer xz = new XmlSerializer(typeof(int));
                     u = (int)xz.Deserialize(fz);
                     fz.Close();
+                    FileStream fy = new FileStream("lvl.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    XmlSerializer xy = new XmlSerializer(typeof(int));
+                    i = (int)xy.Deserialize(fy);
+                    fy.Close();
                     Resume();
                     Console.Clear();
                     snake.body.Remove(snake.body[0]);
@@ -87,7 +96,12 @@ namespace SNAKE_GAME
                     Console.Clear();
                     Console.SetCursorPosition(30, 10);
                     Console.WriteLine("GAMEOVER");
+                    Console.SetCursorPosition(10, 25);
+                    Console.WriteLine("Current Level:" + u);
+                    Console.SetCursorPosition(10, 27);
+                    Console.WriteLine("Score:" + r);
                     Console.ReadKey();
+
                     return;
                 }
                 if (snake.CanEat(food))
@@ -131,6 +145,10 @@ namespace SNAKE_GAME
                         Console.Clear();
                         Console.SetCursorPosition(30, 10);
                         Console.WriteLine("Winner!");
+                        Console.SetCursorPosition(10, 25);
+                        Console.WriteLine("Current Level:" + u);
+                        Console.SetCursorPosition(10, 27);
+                        Console.WriteLine("Score:" + r);
                         Console.ReadKey();
                         return;
 
@@ -139,9 +157,9 @@ namespace SNAKE_GAME
                     u++;
                 }
 
-                Console.SetCursorPosition(10, 18);
+                Console.SetCursorPosition(10, 25);
                 Console.WriteLine("Current Level:" + u);
-                Console.SetCursorPosition(10, 20);
+                Console.SetCursorPosition(10, 27);
                 Console.WriteLine("Score:" + r);
                 Thread.Sleep(500 - u * 100);
             }
@@ -150,7 +168,7 @@ namespace SNAKE_GAME
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
-            Console.SetWindowSize(70, 25);
+            Console.SetWindowSize(75, 30);
             Console.SetCursorPosition(27, 10);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("$---WELCOME---$");
@@ -163,6 +181,7 @@ namespace SNAKE_GAME
             Console.Clear();
             Thread t = new Thread(MoveSnake);
              t.Start();
+            
 
             while (!GameOver) // GameOver == false
         {

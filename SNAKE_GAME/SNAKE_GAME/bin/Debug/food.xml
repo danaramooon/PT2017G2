@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <Food xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <location>
-    <x>30</x>
+    <x>27</x>
     <y>9</y>
   </location>
-  <x>30</x>
+  <x>27</x>
   <y>9</y>
   <sign>36</sign>
   <color>Magenta</color>
