@@ -1,0 +1,6 @@
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\bin\Debug\Complex with serialization.exe.config
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\bin\Debug\Complex with serialization.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\bin\Debug\Complex with serialization.pdb
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\obj\Debug\Complex with serialization.csprojResolveAssemblyReference.cache
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\obj\Debug\Complex with serialization.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Complex with serialization\Complex with serialization\obj\Debug\Complex with serialization.pdb
