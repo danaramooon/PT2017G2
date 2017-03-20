@@ -1,0 +1,9 @@
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\bin\Debug\Cal.exe.config
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.csprojResolveAssemblyReference.cache
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.Properties.Resources.resources
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.csproj.GenerateResource.Cache
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\bin\Debug\Cal.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\bin\Debug\Cal.pdb
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.Form1.resources
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.exe
+C:\Users\Данара\Documents\Visual Studio 2015\Projects\Cal\Cal\obj\Debug\Cal.pdb
