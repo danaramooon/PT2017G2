@@ -59,6 +59,7 @@
             this.button40 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
+            this.equation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button27
@@ -414,10 +415,19 @@
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.memory_op);
             // 
+            // equation
+            // 
+            this.equation.AutoSize = true;
+            this.equation.Location = new System.Drawing.Point(12, 81);
+            this.equation.Name = "equation";
+            this.equation.Size = new System.Drawing.Size(0, 20);
+            this.equation.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(333, 521);
+            this.Controls.Add(this.equation);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button41);
             this.Controls.Add(this.button40);
@@ -502,6 +512,7 @@
         private System.Windows.Forms.Button button40;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Label equation;
     }
 }
 

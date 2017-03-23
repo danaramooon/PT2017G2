@@ -66,14 +66,6 @@ namespace Cal
         {
             return Math.Sqrt(firstNumber);
         }
-        public double getResultPro()
-        {
-            return firstNumber * (secondNumber / 100);
-        }
-        public double getResultC()
-        {
-
-            return 0;
-        }
+        
     }
 }
