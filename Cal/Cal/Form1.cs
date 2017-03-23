@@ -18,10 +18,11 @@ namespace Cal
                 InitializeComponent();
                 calculator = new Calculator();
             }
-
-
-        int cal = 0;
-        bool dtwo = false;
+        int cal = 0; // counter to save numbers
+        int mop = 0;// counter to save second number after op
+        double op = 0; 
+        int equals = 0;
+        bool dtwo = false;//to insert two or more numbers
         Double memory_num = 0;
         string mem = "";
         string operations = "";
@@ -32,7 +33,6 @@ namespace Cal
                 if (calculator.operation == Calculator.Operation.NONE ||
                     calculator.operation == Calculator.Operation.NUMBER)
                 {
-                
                 if ((displa.Text == "0") | (dtwo == true))
                     displa.Clear();
                
@@ -41,85 +41,132 @@ namespace Cal
                }
                 else if (calculator.operation == Calculator.Operation.PLUS)
                 {
+                mop++;
+                if (mop > 1)
+                {
+                    calculator.saveSecondNumber(displa.Text);
+                    displa.Text = (calculator.getResultPlus()).ToString();
+                }
                 calculator.saveFirstNumber(displa.Text);
                 displa.Text = btn.Text;
                 operations = "+";
+                equals = 0;
                   }
                else if(calculator.operation == Calculator.Operation.SUB)
                {
+                mop++;
+                if (mop > 1)
+                {
+                    calculator.saveSecondNumber(displa.Text);
+                    displa.Text = (calculator.getResultSub()).ToString();
+                }
                 calculator.saveFirstNumber(displa.Text);
                 displa.Text = btn.Text;
                 operations = "-";
+                equals = 0;
             }
                 else if(calculator.operation == Calculator.Operation.MUL)
             {
+                mop++;
+                if (mop > 1)
+                {
+                    calculator.saveSecondNumber(displa.Text);
+                    displa.Text = (calculator.getResultMul()).ToString();
+                }
                 calculator.saveFirstNumber(displa.Text);
+                equals = 0;
                 displa.Text = btn.Text;
                 operations = "*";
             }
                 else if(calculator.operation == Calculator.Operation.DIV)
             {
+                mop++;
+                if (mop > 1)
+                {
+                    calculator.saveSecondNumber(displa.Text);
+                    displa.Text = (calculator.getResultDiv()).ToString();
+                }
+                equals = 0;
                 calculator.saveFirstNumber(displa.Text);
                 displa.Text = btn.Text;
                 operations = "/";
             }
-             
             calculator.operation = Calculator.Operation.NUMBER;
             }
-       
         private void button26_Click(object sender, EventArgs e)
         {
             if (cal == 0)
                 calculator.saveSecondNumber(displa.Text);
             else
-                calculator.saveFirstNumber(displa.Text);
-            switch (operations)
+            calculator.saveFirstNumber(displa.Text);
+            mop = 0;
+            cal++;
+            equals++;
+            if (equals == 1)
             {
-                case "+":
-                    displa.Text = calculator.getResultPlus().ToString();
-                    calculator.firstNumber = calculator.getResultPlus();
-                    dtwo = true;
-                    cal++;
-                    break;
-                case "-":
-                    displa.Text = calculator.getResultSub().ToString();
-                    calculator.firstNumber = calculator.getResultSub();
-                    dtwo = true;
-                    cal++;
-                    break;
-                case "*":
-                    displa.Text = calculator.getResultMul().ToString();
-                    calculator.firstNumber = calculator.getResultMul();
-                    dtwo = true;
-                    cal++;
-                    break;
-                case "/":
-                    if (calculator.secondNumber == 0)
-                    {
-                        displa.Text = "ERROR";
-                    }
-                    else
-                    {
-                        displa.Text = calculator.getResultDiv().ToString();
-                        calculator.firstNumber = calculator.getResultDiv();
-                        cal++;
-                        dtwo = true;
-                        
-                    }
-                    break;
-
+                op = calculator.secondNumber;
             }
+            if (equals > 1)
+            {
+                switch (operations)
+                {
+                    case "+":
+                        displa.Text = (calculator.firstNumber + op).ToString();
+                        break;
+                    case "-":
+                        displa.Text = (calculator.firstNumber - op).ToString();
+                        break;
+                    case "*":
+                        displa.Text = (calculator.firstNumber * op).ToString();
+                        break;
+                    case "/":
+                       if (calculator.secondNumber == 0)
+                       {
+                            displa.Text = "ERROR";
+                       }
+                       else
+                        {
+                            displa.Text = (calculator.firstNumber / op).ToString();
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                switch (operations)
+                {
+                    case "+":
+                        displa.Text = calculator.getResultPlus().ToString();
+                        break;
+                    case "-":
+                        displa.Text = calculator.getResultSub().ToString();
+                        break;
+                    case "*":
+                        displa.Text = calculator.getResultMul().ToString();
+                       break;
+                    case "/":
+                        if (calculator.secondNumber == 0)
+                        {
+                            displa.Text = "ERROR";
+                        }
+                        else
+                        {
+                            displa.Text = calculator.getResultDiv().ToString();
+                        }
+                        break;
+                }
+            }
+            calculator.firstNumber = double.Parse(displa.Text);
+            cal = 0;
         }
-           private void button23_Click(object sender, EventArgs e)
-            {
-                calculator.operation = Calculator.Operation.PLUS;
-            }
-
+        private void button23_Click(object sender, EventArgs e)
+        {
+            calculator.operation = Calculator.Operation.PLUS;
+        }
         private void button14_Click(object sender, EventArgs e)
         {
             calculator.operation = Calculator.Operation.DIV;
         }
-
         private void button28_Click(object sender, EventArgs e)
         {
             calculator.operation = Calculator.Operation.MUL;
@@ -128,53 +175,64 @@ namespace Cal
         {
             calculator.operation = Calculator.Operation.SUB;
         }
-
-        private void button29_Click(object sender, EventArgs e)//Sqrt
+        private void operation_click(object sender, EventArgs e)
         {
-            calculator.operation = Calculator.Operation.SQRT;
-            calculator.saveFirstNumber(displa.Text);
-            displa.Text = calculator.getResultSqrt().ToString();
-        }
-
-        private void button32_Click(object sender, EventArgs e)//CE
-        {
-            displa.Clear();
-            cal = 0;
-        }
-
-        private void button30_Click(object sender, EventArgs e)//pro cent
-        { 
-            displa.Text = (calculator.firstNumber * (Double.Parse(displa.Text)/ 100)).ToString();
-
-        }
-
-        private void button34_Click(object sender, EventArgs e)//+-
-        {
-           
-            displa.Text = (double.Parse(displa.Text)*(-1)).ToString() ;
-        }
-        private void dot(object sender, EventArgs e)//,
-        {
-            if (!displa.Text.Contains(","))
+            Button btn = (Button)sender;
+            switch(btn.Text)
             {
-                displa.Text += ",";
-            }
-            else return;
+                case "x*2":
+                    displa.Text = (calculator.getResultPow(displa.Text)).ToString();
+                    break;
+                case "%":
+                    displa.Text = (calculator.firstNumber * (Double.Parse(displa.Text) / 100)).ToString();
+                    break;
+                case "1/x":
+                    calculator.firstNumber = Double.Parse(displa.Text);
+                    if (calculator.firstNumber != 0)
+                        displa.Text = (1 / calculator.firstNumber).ToString();
+                    else
+                        displa.Text = "ERROR";
+                    break;
+                case "√":
+                    displa.Text = (calculator.getResultSqrt(displa.Text)).ToString();
+                    break;
+                case "±":
+                    displa.Text = (double.Parse(displa.Text) * (-1)).ToString();
+                    break;
+                case ",":
+                    {
+                        if (!displa.Text.Contains(","))
+                        {
+                            displa.Text += ",";
+                        }
+                        else return;
+                        break;
+                   }
+              }
         }
-        private void back_Click(object sender, EventArgs e)//delete
+        private void Del_click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(displa.Text))
+            Button btn = (Button)sender;
+            switch(btn.Text)
             {
-                displa.Text = displa.Text.Substring(0, displa.Text.Length - 1);
+                case "Del":
+                    if (displa.Text != " ")
+                    {
+                        // displa.Text = displa.Text.Substring(0, displa.Text.Length - 1);
+                        displa.Text = calculator.Del(displa.Text);
+                    }
+                    else
+                        displa.Text = "0";
+                    break;
+                case "CE":
+                    displa.Clear();
+                    cal = 0;
+                    break;
+                case "C":
+                    displa.Text = "0";
+                    cal = 0;
+                    break;
             }
-            else
-                displa.Text = "0";
-        }
-        private void button35_Click(object sender, EventArgs e)//button С
-        {
-            displa.Text = "0";
-            cal = 0;
-           
         }
         private void memory_op(object sender, EventArgs e)
         {
@@ -185,37 +243,34 @@ namespace Cal
             {
                 case "MS":
                     memory_num = memory;
-                    displa.Clear();
+                    displa.Text = "0";
+                    button38.Enabled = true;
+                    button39.Enabled = true;
                     break;
                 case "M+":
                     memory_num = (memory_num + Double.Parse(displa.Text));
+                    button38.Enabled = true;
+                    button39.Enabled = true;
                     break;
                 case "M-":
                     memory_num = (memory_num - Double.Parse(displa.Text));
+                    button38.Enabled = true;
+                    button39.Enabled = true;
                     break;
                 case "MR":
                     displa.Text = memory_num.ToString();
-                    
-                   break;
+                    button38.Enabled = true;
+                    button39.Enabled = true;
+                    break;
                 case "MC":
-                   memory_num = 0;
-                   displa.Text = "";
+                    memory_num = 0;
+                    displa.Text = memory_num.ToString();
+                    button38.Enabled = false;
+                    button39.Enabled = false;
                     break;
             }
         }
-
-        private void button37_Click(object sender, EventArgs e)//x*2
-        {
-            calculator.firstNumber = double.Parse(displa.Text);
-            displa.Text = Math.Pow(calculator.firstNumber,2).ToString();
-        }
-
-        private void button31_Click(object sender, EventArgs e)//1/x
-        {
-            calculator.firstNumber = Double.Parse(displa.Text);
-            displa.Text = (1 / calculator.firstNumber).ToString();
-        }
-    }
-    }
+     }
+ }
 
 

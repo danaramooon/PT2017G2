@@ -31,9 +31,7 @@ namespace Cal
             operation = Operation.NONE;
             firstNumber = 0;
             secondNumber = 0;
-
         }
-
         public void saveFirstNumber(string s)
         {
             firstNumber = double.Parse(s);
@@ -43,9 +41,6 @@ namespace Cal
         {
             secondNumber = double.Parse(s);
         }
-
-
-
         public double getResultPlus()
         {
             return firstNumber + secondNumber;
@@ -62,10 +57,25 @@ namespace Cal
         {
             return firstNumber / secondNumber;
         }
-        public double getResultSqrt()
+        public double getResultSqrt(string s)
         {
-            return Math.Sqrt(firstNumber);
+            double n = double.Parse(s);
+            return Math.Sqrt(n);
         }
-        
+        public string Del(string s)
+        {
+            string text = "";
+            char[] c = s.ToCharArray();
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                text = text + s[i];
+            }
+            return text;
+        }
+        public double getResultPow(string s)
+        {
+            double n = double.Parse(s);
+            return Math.Pow(n, 2);
+        }
     }
 }
