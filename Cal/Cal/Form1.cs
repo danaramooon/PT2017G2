@@ -22,7 +22,14 @@ namespace Cal
 
         int cal = 0;
         int ccal = 0;
+        double value = 0;
         bool dtwo = false;
+        Double memory_num = 0;
+        string mem = "";
+        Double memory = 0;
+        Double memory_sum = 0;
+        Double memory_sub = 0;
+        string special_op = "";
         private void number_click(object sender, EventArgs e)
             {
                 Button btn = sender as Button;
@@ -60,6 +67,19 @@ namespace Cal
                 displa.Text = btn.Text;
                 cal = 4;
             }
+                else if (calculator.operation == Calculator.Operation.PRO)
+            {
+                calculator.saveFirstNumber(displa.Text);
+                displa.Text = btn.Text;
+                cal = 5;
+            }
+                else if(calculator.operation == Calculator.Operation.C)
+            {
+                calculator.saveFirstNumber(displa.Text);
+                displa.Text = btn.Text;
+                
+                cal = 6;
+            }
             
             calculator.operation = Calculator.Operation.NUMBER;
             }
@@ -75,13 +95,6 @@ namespace Cal
             else
             {
                 calculator.saveFirstNumber(displa.Text);
-                if (displa.Text == calculator.getResultPro().ToString())
-                {
-                    calculator.firstNumber = calculator.getResultPro(); 
-                }
-                else
-                { }
-                
             }
 
             if (cal == 1)
@@ -109,7 +122,20 @@ namespace Cal
                 ccal++;
                 calculator.firstNumber = calculator.getResultDiv();
             }
-            
+         if(cal == 5)
+            {
+                displa.Text = calculator.getResultPro().ToString();
+                ccal++;
+                calculator.firstNumber = calculator.getResultDiv();
+            }   
+         if(cal == 6)
+            {
+                //displa.Clear();
+                //displa.Text = "0";
+                //calculator.secondNumber = 0;
+                ccal = 0;
+                
+            }
         }
             private void button23_Click(object sender, EventArgs e)
             {
@@ -139,69 +165,75 @@ namespace Cal
 
         private void button32_Click(object sender, EventArgs e)
         {
-            displa.Text = "";
+            calculator.operation = Calculator.Operation.C;
+          
         }
 
         private void button30_Click(object sender, EventArgs e)
         {
             calculator.operation = Calculator.Operation.PRO;
-            calculator.saveFirstNumber(displa.Text);
-            displa.Text = calculator.getResultPro().ToString();
-            
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+           
             displa.Text = (double.Parse(displa.Text)*(-1)).ToString() ;
         }
+        private void dot(object sender, EventArgs e)
+        {
+            if (!displa.Text.Contains(","))
+            {
+                displa.Text += ",";
+            }
+            else return;
+        }
+        private void back_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(displa.Text))
+            {
+                displa.Text = displa.Text.Substring(0, displa.Text.Length - 1);
+            }
+            else
+                displa.Text = "0";
+        }
+        private void button35_Click(object sender, EventArgs e)//кнопка СЕ
+        {
+            displa.Text = "0";
+        }
 
+       
+            private void memory_op(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            mem = btn.Text;
+            memory = Double.Parse(displa.Text);
+            switch (mem)
+            {
+                case "MS":
+                    memory_num = memory;
+                    displa.Text = (memory).ToString();
+                    break;
+                case "M+":
+                    memory_sum = Double.Parse(displa.Text);
+                    displa.Text = (Double.Parse(displa.Text) + memory_sum).ToString();
+                    break;
+                case "M-":
+                    memory_sub = Double.Parse(displa.Text);
+                    displa.Text = (Double.Parse(displa.Text) - memory_sub).ToString();
+                    break;
+                case "MR":
+                    displa.Text = displa.Text;
+                    break;
+                case "MC":
+                    displa.Text = " ";
+                    break;
+                default:
+                    break;
+            }
+        }
 
-
-        /*
-        private void button1_Click(object sender, EventArgs e)
-        {
-            display.Text += "1";
+      
         }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            display.Text += "0";
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            display.Text += "2";
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            display.Text += "3";
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            display.Text += "4";
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            display.Text += "5";
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            display.Text += "6";
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            display.Text += "7";
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            display.Text += "8";
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            display.Text += "9";
-        }
-         */
     }
 
-
-    }
 

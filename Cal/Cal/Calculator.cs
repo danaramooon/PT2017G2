@@ -31,7 +31,7 @@ namespace Cal
             operation = Operation.NONE;
             firstNumber = 0;
             secondNumber = 0;
-            
+
         }
 
         public void saveFirstNumber(string s)
@@ -43,7 +43,7 @@ namespace Cal
         {
             secondNumber = double.Parse(s);
         }
-        
+
 
 
         public double getResultPlus()
@@ -65,10 +65,15 @@ namespace Cal
         public double getResultSqrt()
         {
             return Math.Sqrt(firstNumber);
-        } 
+        }
         public double getResultPro()
         {
-            return firstNumber / 100;
+            return firstNumber * (secondNumber / 100);
+        }
+        public double getResultC()
+        {
+
+            return 0;
         }
     }
 }
