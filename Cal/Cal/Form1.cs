@@ -27,9 +27,6 @@ namespace Cal
         Double memory_num = 0;
         string mem = "";
         Double memory = 0;
-        Double memory_sum = 0;
-        Double memory_sub = 0;
-        string special_op = "";
         private void number_click(object sender, EventArgs e)
             {
                 Button btn = sender as Button;
@@ -127,12 +124,13 @@ namespace Cal
                 displa.Text = calculator.getResultPro().ToString();
                 ccal++;
                 calculator.firstNumber = calculator.getResultDiv();
-            }   
+            }
+            ccal++;
          if(cal == 6)
             {
-                //displa.Clear();
-                //displa.Text = "0";
-                //calculator.secondNumber = 0;
+                displa.Clear();
+                displa.Text = "0";
+                calculator.secondNumber = 0;
                 ccal = 0;
                 
             }
@@ -211,23 +209,18 @@ namespace Cal
             {
                 case "MS":
                     memory_num = memory;
-                    displa.Text = (memory).ToString();
                     break;
                 case "M+":
-                    memory_sum = Double.Parse(displa.Text);
-                    displa.Text = (Double.Parse(displa.Text) + memory_sum).ToString();
+                    memory_num = (memory_num + Double.Parse(displa.Text));
                     break;
                 case "M-":
-                    memory_sub = Double.Parse(displa.Text);
-                    displa.Text = (Double.Parse(displa.Text) - memory_sub).ToString();
+                    memory_num = (memory_num - Double.Parse(displa.Text));
                     break;
                 case "MR":
-                    displa.Text = displa.Text;
+                    displa.Text = memory_num.ToString();
                     break;
                 case "MC":
-                    displa.Text = " ";
-                    break;
-                default:
+                   memory_num = 0;
                     break;
             }
         }
