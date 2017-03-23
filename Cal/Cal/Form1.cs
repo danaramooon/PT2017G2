@@ -64,20 +64,7 @@ namespace Cal
                 displa.Text = btn.Text;
                 cal = 4;
             }
-                else if (calculator.operation == Calculator.Operation.PRO)
-            {
-                calculator.saveFirstNumber(displa.Text);
-                displa.Text = btn.Text;
-               // cal = 5;
-            }
-                else if(calculator.operation == Calculator.Operation.C)
-            {
-                calculator.saveFirstNumber(displa.Text);
-                displa.Text = btn.Text;
-                
-                cal = 6;
-            }
-            
+             
             calculator.operation = Calculator.Operation.NUMBER;
             }
 
@@ -119,16 +106,6 @@ namespace Cal
                 ccal++;
                 calculator.firstNumber = calculator.getResultDiv();
             }
-       
-           
-         if(cal == 6)
-            {
-                displa.Clear();
-                displa.Text = "0";
-                calculator.secondNumber = 0;
-                ccal = 0;
-                
-            }
         }
             private void button23_Click(object sender, EventArgs e)
             {
@@ -156,14 +133,15 @@ namespace Cal
             displa.Text = calculator.getResultSqrt().ToString();
         }
 
-        private void button32_Click(object sender, EventArgs e)
+        private void button32_Click(object sender, EventArgs e)//CE
         {
-            calculator.operation = Calculator.Operation.C;
+            displa.Clear();
+            ccal = 0;
           
         }
 
         private void button30_Click(object sender, EventArgs e)
-        {
+        { 
             calculator.firstNumber = Double.Parse(displa.Text);
             calculator.secondNumber = double.Parse(displa.Text);
             displa.Text = (calculator.firstNumber * (calculator.secondNumber / 100)).ToString();
@@ -192,9 +170,11 @@ namespace Cal
             else
                 displa.Text = "0";
         }
-        private void button35_Click(object sender, EventArgs e)//button СЕ
+        private void button35_Click(object sender, EventArgs e)//button С
         {
+            
             displa.Text = "0";
+            ccal = 0;
         }
 
        

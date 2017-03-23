@@ -300,7 +300,7 @@
             this.button32.TabIndex = 19;
             this.button32.Text = "C";
             this.button32.UseVisualStyleBackColor = false;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
+            this.button32.Click += new System.EventHandler(this.button35_Click);
             // 
             // button33
             // 
@@ -337,7 +337,7 @@
             this.button35.TabIndex = 22;
             this.button35.Text = "CE";
             this.button35.UseVisualStyleBackColor = false;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
+            this.button35.Click += new System.EventHandler(this.button32_Click);
             // 
             // button36
             // 
