@@ -59,7 +59,6 @@
             this.button40 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button27
@@ -283,12 +282,13 @@
             // 
             this.button31.BackColor = System.Drawing.SystemColors.Control;
             this.button31.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button31.Location = new System.Drawing.Point(230, 172);
+            this.button31.Location = new System.Drawing.Point(230, 163);
             this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(77, 59);
+            this.button31.Size = new System.Drawing.Size(77, 68);
             this.button31.TabIndex = 18;
             this.button31.Text = "1/x";
             this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button32
             // 
@@ -354,12 +354,15 @@
             // 
             // button37
             // 
-            this.button37.Location = new System.Drawing.Point(164, 163);
+            this.button37.BackColor = System.Drawing.SystemColors.Control;
+            this.button37.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button37.Location = new System.Drawing.Point(162, 163);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(70, 65);
             this.button37.TabIndex = 24;
             this.button37.Text = "x*2";
-            this.button37.UseVisualStyleBackColor = true;
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
             // button38
             // 
@@ -383,7 +386,7 @@
             // 
             // button40
             // 
-            this.button40.Location = new System.Drawing.Point(83, 119);
+            this.button40.Location = new System.Drawing.Point(85, 120);
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(53, 38);
             this.button40.TabIndex = 27;
@@ -393,7 +396,7 @@
             // 
             // button41
             // 
-            this.button41.Location = new System.Drawing.Point(130, 121);
+            this.button41.Location = new System.Drawing.Point(142, 122);
             this.button41.Name = "button41";
             this.button41.Size = new System.Drawing.Size(51, 36);
             this.button41.TabIndex = 28;
@@ -403,7 +406,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(174, 118);
+            this.button42.Location = new System.Drawing.Point(187, 121);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(60, 39);
             this.button42.TabIndex = 29;
@@ -411,21 +414,10 @@
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.memory_op);
             // 
-            // button43
-            // 
-            this.button43.Location = new System.Drawing.Point(231, 123);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(58, 32);
-            this.button43.TabIndex = 30;
-            this.button43.Text = "M*";
-            this.button43.UseVisualStyleBackColor = true;
-            this.button43.Click += new System.EventHandler(this.memory_op);
-            // 
             // Form1
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(333, 521);
-            this.Controls.Add(this.button43);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button41);
             this.Controls.Add(this.button40);
@@ -510,7 +502,6 @@
         private System.Windows.Forms.Button button40;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button43;
     }
 }
 

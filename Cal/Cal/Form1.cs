@@ -68,7 +68,7 @@ namespace Cal
             {
                 calculator.saveFirstNumber(displa.Text);
                 displa.Text = btn.Text;
-                cal = 5;
+               // cal = 5;
             }
                 else if(calculator.operation == Calculator.Operation.C)
             {
@@ -119,13 +119,8 @@ namespace Cal
                 ccal++;
                 calculator.firstNumber = calculator.getResultDiv();
             }
-         if(cal == 5)
-            {
-                displa.Text = calculator.getResultPro().ToString();
-                ccal++;
-                calculator.firstNumber = calculator.getResultDiv();
-            }
-            ccal++;
+       
+           
          if(cal == 6)
             {
                 displa.Clear();
@@ -169,7 +164,10 @@ namespace Cal
 
         private void button30_Click(object sender, EventArgs e)
         {
-            calculator.operation = Calculator.Operation.PRO;
+            calculator.firstNumber = Double.Parse(displa.Text);
+            calculator.secondNumber = double.Parse(displa.Text);
+            displa.Text = (calculator.firstNumber * (calculator.secondNumber / 100)).ToString();
+
         }
 
         private void button34_Click(object sender, EventArgs e)
@@ -185,7 +183,7 @@ namespace Cal
             }
             else return;
         }
-        private void back_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)//delete
         {
             if (!string.IsNullOrEmpty(displa.Text))
             {
@@ -194,7 +192,7 @@ namespace Cal
             else
                 displa.Text = "0";
         }
-        private void button35_Click(object sender, EventArgs e)//кнопка СЕ
+        private void button35_Click(object sender, EventArgs e)//button СЕ
         {
             displa.Text = "0";
         }
@@ -225,8 +223,18 @@ namespace Cal
             }
         }
 
-      
+        private void button37_Click(object sender, EventArgs e)
+        {
+            calculator.firstNumber = Double.Parse(displa.Text);
+            displa.Text = (calculator.firstNumber * calculator.firstNumber).ToString();
         }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            calculator.firstNumber = Double.Parse(displa.Text);
+            displa.Text = (1 / calculator.firstNumber).ToString();
+        }
+    }
     }
 
 
