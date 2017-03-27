@@ -51,7 +51,7 @@ namespace Cal
                 displa.Text = btn.Text;
                 operations = "+";
                 equals = 0;
-                  }
+               }
                else if(calculator.operation == Calculator.Operation.SUB)
                {
                 mop++;
@@ -91,6 +91,16 @@ namespace Cal
                 displa.Text = btn.Text;
                 operations = "/";
             }
+            if (displa.Text.Contains("ER"))
+            {
+                displa.Clear();
+                displa.Text = btn.Text;
+            }
+            if(button38.Enabled == true | memory_num == 0)
+            {
+                displa.Clear();
+                displa.Text = btn.Text;
+            }
             calculator.operation = Calculator.Operation.NUMBER;
             }
         private void button26_Click(object sender, EventArgs e)
@@ -123,6 +133,7 @@ namespace Cal
                        if (calculator.secondNumber == 0)
                        {
                             displa.Text = "ERROR";
+                            dtwo = true;
                        }
                        else
                         {
@@ -148,6 +159,7 @@ namespace Cal
                         if (calculator.secondNumber == 0)
                         {
                             displa.Text = "ERROR";
+                            
                         }
                         else
                         {
@@ -156,8 +168,10 @@ namespace Cal
                         break;
                 }
             }
-            calculator.firstNumber = double.Parse(displa.Text);
+            if(calculator.secondNumber != 0)
+           calculator.firstNumber = double.Parse(displa.Text);
             cal = 0;
+          
         }
         private void button23_Click(object sender, EventArgs e)
         {
@@ -243,7 +257,7 @@ namespace Cal
             {
                 case "MS":
                     memory_num = memory;
-                    displa.Text = "0";
+                    //displa.Text = "0";
                     button38.Enabled = true;
                     button39.Enabled = true;
                     break;
@@ -264,7 +278,7 @@ namespace Cal
                     break;
                 case "MC":
                     memory_num = 0;
-                    displa.Text = memory_num.ToString();
+                   //displa.Text = memory_num.ToString();
                     button38.Enabled = false;
                     button39.Enabled = false;
                     break;

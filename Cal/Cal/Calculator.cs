@@ -19,9 +19,6 @@ namespace Cal
             MUL,
             SUB,
             SQRT,
-            PRO,
-            C,
-            X
         };
         public Operation operation;
         public double firstNumber, secondNumber;
