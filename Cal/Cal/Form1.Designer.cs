@@ -60,6 +60,7 @@
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.equation = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button27
@@ -184,7 +185,7 @@
             this.button23.TabIndex = 9;
             this.button23.Text = "+";
             this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
+            this.button23.Click += new System.EventHandler(this.press_button);
             // 
             // button24
             // 
@@ -208,7 +209,7 @@
             this.button25.TabIndex = 11;
             this.button25.Text = "-";
             this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.Click += new System.EventHandler(this.press_button);
             // 
             // button26
             // 
@@ -241,7 +242,7 @@
             this.button14.TabIndex = 14;
             this.button14.Text = "/";
             this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button14.Click += new System.EventHandler(this.press_button);
             // 
             // button28
             // 
@@ -253,7 +254,7 @@
             this.button28.TabIndex = 15;
             this.button28.Text = "*";
             this.button28.UseVisualStyleBackColor = false;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
+            this.button28.Click += new System.EventHandler(this.press_button);
             // 
             // button29
             // 
@@ -425,10 +426,19 @@
             this.equation.Size = new System.Drawing.Size(0, 20);
             this.equation.TabIndex = 30;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(5, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 26);
+            this.textBox1.TabIndex = 31;
+            this.textBox1.Text = "n";
+            // 
             // Form1
             // 
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(333, 477);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.equation);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button41);
@@ -515,6 +525,7 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Label equation;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

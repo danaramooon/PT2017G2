@@ -19,9 +19,13 @@ namespace Cal
             MUL,
             SUB,
             SQRT,
-        };
+            PRO,
+            C,
+            CE
+        };  
         public Operation operation;
         public double firstNumber, secondNumber;
+        string y;
 
         public Calculator()
         {
@@ -65,7 +69,7 @@ namespace Cal
             char[] c = s.ToCharArray();
             for (int i = 0; i < s.Length - 1; i++)
             {
-                text = text + s[i];
+                text = text + c[i];
             }
             return text;
         }
@@ -74,5 +78,11 @@ namespace Cal
             double n = double.Parse(s);
             return Math.Pow(n, 2);
         }
+        public double Plus(string a)
+        {
+            firstNumber = Double.Parse(a);
+            return firstNumber * 2;
+        }
+       
     }
 }
