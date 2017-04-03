@@ -21,14 +21,13 @@ namespace Cal
         }
         int ccal = 0; // to insert number after memory_op
         Double memory_num = 0;
-        int mop = 0;
-        string mem = "";
+        int mop = 0; // press many operations
+        string mem = ""; 
         string operations = "";
         string secondop = "";
         Double memory = 0;
         static bool NumberPressed = false;
         bool OpNot = false;
-        bool FirstNumberIsNotEmpty = false;
         int EN = 0;
         private void number_click(object sender, EventArgs e)
             {
@@ -40,6 +39,9 @@ namespace Cal
                     OpNot = true;
                     NumberPressed = true;
                     calculator.operation = Calculator.Operation.NUMBER;
+                    secondop = "";
+                    operations = "";
+                    mop = 0;
                     calculator.firstNumber = calculator.secondNumber;
                     displa.Text = " ";
                     EN= 1;
@@ -57,7 +59,6 @@ namespace Cal
             if (calculator.operation == Calculator.Operation.NONE ||
                     calculator.operation == Calculator.Operation.NUMBER)
                 {
-               
                 NumberPressed = true;
                 if ((displa.Text == "0"))
                     displa.Clear();
@@ -107,7 +108,6 @@ namespace Cal
                 if (calculator.operation == Calculator.Operation.NUMBER|calculator.operation == Calculator.Operation.C | calculator.operation == Calculator.Operation.CE|| calculator.operation == Calculator.Operation.PLUS || calculator.operation == Calculator.Operation.MUL || calculator.operation == Calculator.Operation.DIV | calculator.operation == Calculator.Operation.SUB)
                 {
                     calculator.saveSecondNumber(displa.Text);
-                 
                 }
                 else if (calculator.operation == Calculator.Operation.EQUAL)
                 {
@@ -115,7 +115,6 @@ namespace Cal
                         calculator.saveFirstNumber(displa.Text);
                     else
                         calculator.saveSecondNumber(displa.Text);
-
                 }
                 {
                     switch (secondop)
@@ -157,22 +156,22 @@ namespace Cal
                     case "+":
                         calculator.operation = Calculator.Operation.PLUS;
                         operations = "+";
-                        //secondop = "+";
+                        secondop = "+";
                         break;
                     case "-":
                         calculator.operation = Calculator.Operation.SUB;
                         operations = "-";
-                       // secondop = "-";
+                        secondop = "-";
                         break;
                     case "*":
                         calculator.operation = Calculator.Operation.MUL;
                         operations = "*";
-                        //secondop = "*";
+                        secondop = "*";
                         break;
                     case "/":
                         calculator.operation = Calculator.Operation.DIV;
                         operations = "/";
-                       // secondop = "/";
+                        secondop = "/";
                         break;
                 }
             }
@@ -200,8 +199,6 @@ namespace Cal
             }
              if(mop == 1)
             {
-                
-               
                 switch (secondop)
                 {
                     case "+":
@@ -360,13 +357,15 @@ namespace Cal
                     break;
                 case "C":
                     displa.Text = "0";
-                    calculator.firstNumber = 0;
-                    calculator.secondNumber = 0;
-                    calculator.operation = Calculator.Operation.C;
-                    FirstNumberIsNotEmpty = false;
                     EN = 0;
                     NumberPressed = false;
                     OpNot = false;
+                    operations = "";
+                    secondop = "";
+                    mop = 0;
+                    calculator.firstNumber = 0;
+                    calculator.secondNumber = 0;
+                    calculator.operation = Calculator.Operation.NONE;
                     break;
             }
         }
